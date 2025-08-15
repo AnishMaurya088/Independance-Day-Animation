@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Independence Day Animation</title>
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(#FF9933, white, #138808);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Background photo feel */
+    .photo-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Ashoka_Chakra.svg') center/contain no-repeat;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    /* Common text style */
+    .text {
+        position: absolute;
+        font-weight: bold;
+        text-transform: uppercase;
+        animation: floatText 5s infinite ease-in-out;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Floating animation */
+    @keyframes floatText {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Chakra */
+    .chakra {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Ashoka_Chakra.svg') center/contain no-repeat;
+        animation: rotateChakra 8s linear infinite;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes rotateChakra {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Specific text styles with colors */
+    .happy {
+        font-size: 3rem;
+        top: 20%;
+        color: #FF9933; /* saffron */
+        z-index: 3;
+    }
+    .independence {
+        font-size: 4rem;
+        top: 45%;
+        transform: translateY(-50%);
+        color: rgb(201, 187, 187); /* white */
+        z-index: 1; /* behind chakra */
+    }
+    .day {
+        font-size: 3rem;
+        bottom: 20%;
+        color: #138808; /* green */
+        z-index: 3;
+    }
+
+    /* Watermark name bottom-right */
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 15px;
+        font-size: 14px;
+        color: rgba(0,0,0,0.6);
+        font-weight: bold;
+        z-index: 10;
+    }
+</style>
+</head>
+<body>
+
+<div class="photo-bg"></div>
+
+<div class="text happy">Happy</div>
+<div class="text independence">Independence</div>
+<div class="text day">Day</div>
+
+<div class="chakra"></div>
+
+<!-- Your Name Watermark -->
+<div class="watermark">© Anish Maurya</div>
+
+</body>
+</html>
